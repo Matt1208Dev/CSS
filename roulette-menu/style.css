@@ -1,0 +1,116 @@
+/* Global */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(248, 248, 248);
+}
+
+.toggle-btn,
+.toggle-btn i,
+.roulette-box,
+.roulette-box ul,
+.roulette-box ul li,
+.roulette-box ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteneur */
+.roulette-box {
+  width: 300px;
+  height: 300px;
+  margin: 200px auto 0;
+  position: relative;
+  transition: transform 0.4s ease-out;
+}
+
+/* Bouton Toggle */
+.toggle-btn {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  background-color: #f1f1f1;
+  border: 1px solid rgb(231, 231, 231);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.toggle-btn i {
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  transition: transform 0.4s ease-out;
+  pointer-events: none;
+}
+
+/* Animation du bouton Toggle */
+.roulette-box.active .toggle-btn i {
+  transform: rotate(405deg);
+}
+
+/* items */
+.roulette-box ul {
+  width: 60px;
+  height: 60px;
+}
+
+.roulette-box ul li {
+  list-style-type: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  color: rgb(40, 40, 40);
+  position: absolute;
+  cursor: pointer;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-out;
+}
+
+.roulette-box ul li a {
+  text-decoration: none;
+  color: #55555b;
+}
+
+/* Effets de survol des items */
+.roulette-box ul li:hover {
+  background-color: rgb(231, 231, 231);
+}
+.roulette-box ul li:hover a {
+  color: black;
+}
+
+/* Réalignement des icônes après rotation */
+.roulette-box.active li:nth-child(1) {
+  transform: rotate(0deg) translateX(-80px);
+}
+
+.roulette-box.active li:nth-child(2) {
+  transform: rotate(60deg) translateX(-80px) rotate(-60deg);
+}
+
+.roulette-box.active li:nth-child(3) {
+  transform: rotate(120deg) translateX(-80px) rotate(-120deg);
+}
+
+.roulette-box.active li:nth-child(4) {
+  transform: rotate(180deg) translateX(-80px) rotate(-180deg);
+}
+
+.roulette-box.active li:nth-child(5) {
+  transform: rotate(240deg) translateX(-80px) rotate(-240deg);
+}
+
+.roulette-box.active li:nth-child(6) {
+  transform: rotate(300deg) translateX(-80px) rotate(-300deg);
+}
